@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@base": ["components/base"],
+      "@base/*": ["components/base/*"],
+      "@compound": ["./components/compound"],
+      "@compound/*": ["./components/compound/*"],
+      "@domain": ["components/domain"],
+      "@domain/*": ["components/domain/*"],
+      "@pages": ["pages"],
+      "@pages/*": ["pages/*"],
+      "@contexts": ["contexts"],
+      "@contexts/*": ["contexts/*"],
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
+      "@apis": ["api"],
+      "@apis/*": ["api/*"],
+      "@data": ["data"],
+      "@data/*": ["data/*"],
+      "@constants": ["data/constants"],
+      "@constants/*": ["data/constants/*"],
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"],
+      "@libs": ["utils/libs"],
+      "@libs/*": ["utils/libs/*"],
+      "@assets": ["assets"],
+      "@assets/*": ["assets/*"],
+      "@styles": ["styles"],
+      "@styles/*": ["styles/*"],
+    }
+  }
+}
