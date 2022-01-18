@@ -3,26 +3,28 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    jest: true,
+    jest: true
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       parserOptions: {
-        project: ['./tsconfig.json'],
-      },
-    },
+        project: ['tsconfig.json'],
+      }
+    }
   ],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
   plugins: ['react', 'prettier', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    'plugin:react/jsx-runtime',
+    'plugin:react/jsx-runtime'
   ],
-  ignorePatterns: ['webpack.config.js', '.eslintrc.json', 'api/*.ts'],
+  ignorePatterns: ['webpack.config.js','**/*.config.js', '.eslintrc.js', 'api/*.ts'],
   rules: {
     'react/jsx-key': 'off',
     'no-use-before-define': 'off',
@@ -32,21 +34,20 @@ module.exports = {
       'error',
       {
         callbacksLast: true,
-        reservedFirst: true,
-      },
+        reservedFirst: true
+      }
     ],
     '@typescript-eslint/array-type': ['error', { default: 'array' }],
     '@typescript-eslint/ban-tslint-comment': 'error',
     '@typescript-eslint/consistent-indexed-object-style': [
       'error',
-      'index-signature',
+      'index-signature'
     ],
     'react/jsx-pascal-case': ['error'],
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/explicit-function-return-type': 'error',
-    '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/member-ordering': 'error',
     '@typescript-eslint/method-signature-style': ['error', 'method'],
     '@typescript-eslint/no-explicit-any': 'off',
@@ -60,19 +61,40 @@ module.exports = {
       'error',
       {
         ignore: [
-          -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+          -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
         ],
         ignoreArrayIndexes: true,
-        ignoreEnums: true,
-      },
+        ignoreEnums: true
+      }
+    ],
+    '@typescript-eslint/member-delimiter-style': [
+      'error',
+      {
+        multiline: {
+          delimiter: 'comma',
+          requireLast: true
+        },
+        singleline: {
+          delimiter: 'comma',
+          requireLast: false
+        },
+        overrides: {
+          interface: {
+            multiline: {
+              delimiter: 'comma',
+              requireLast: true
+            }
+          }
+        }
+      }
     ],
     '@typescript-eslint/no-unused-expressions': 'off',
     '@typescript-eslint/no-duplicate-imports': 'error',
-    '@typescript-eslint/jsx-key': 'off',
+    '@typescript-eslint/jsx-key': 'off'
   },
   settings: {
     react: {
-      version: 'detect',
-    },
-  },
+      version: 'detect'
+    }
+  }
 }
