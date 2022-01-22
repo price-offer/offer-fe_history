@@ -17,13 +17,12 @@ module.exports = {
   parserOptions: {
     project: ['./tsconfig.json'],
   },
-  plugins: ['react', 'prettier', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['webpack.config.js','**/*.config.js', '.eslintrc.js', 'api/*.ts'],
   rules: {
@@ -69,6 +68,10 @@ module.exports = {
         ignoreEnums: true
       }
     ],
+    '@typescript-eslint/no-unused-expressions': 'off',
+    '@typescript-eslint/no-duplicate-imports': 'error',
+    '@typescript-eslint/jsx-key': 'off',
+    "@typescript-eslint/no-unused-vars": 'off',
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
@@ -90,10 +93,6 @@ module.exports = {
         }
       }
     ],
-    '@typescript-eslint/no-unused-expressions': 'off',
-    '@typescript-eslint/no-duplicate-imports': 'error',
-    '@typescript-eslint/jsx-key': 'off',
-    "@typescript-eslint/no-unused-vars": 'off'
   },
   settings: {
     react: {
