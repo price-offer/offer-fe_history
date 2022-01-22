@@ -16,6 +16,10 @@ module.exports = {
       __dirname,
       '../src/',
     );
+    config.resolve.alias['@base'] = path.resolve(
+      __dirname,
+      '../src/components/base',
+    );
     config.resolve.alias['@components'] = path.resolve(
       __dirname,
       '../src/components',
@@ -23,6 +27,10 @@ module.exports = {
     config.resolve.alias['@utils'] = path.resolve(
       __dirname,
       '../src/utils',
+    );
+    config.resolve.alias['@constants'] = path.resolve(
+      __dirname,
+      '../src/data/constants',
     );
     config.resolve.alias['@hooks'] = path.resolve(__dirname, '../src/hooks');
     config.resolve.alias['@api'] = path.resolve(
