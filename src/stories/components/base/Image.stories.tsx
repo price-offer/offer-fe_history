@@ -1,7 +1,7 @@
 import type { ReactElement } from "react"
 import Image from "@base/Image"
 import type { ImageProps } from '@base/Image/types'
-import { NO_IMAGE_USER, NO_IMAGE_SQUARE, NO_IMAGE_RECTANGLE_H, NO_IMAGE_RECTANGLE_W  } from '@constants'
+import { NO_IMAGE_USER, NO_IMAGE_SQUARE, NO_IMAGE_RECTANGLE_H, NO_IMAGE_RECTANGLE_W, NO_IMAGE_PRODUCT  } from '@constants'
 
 export default {
   title: 'Component/Base/Image',
@@ -50,6 +50,21 @@ export const User = ({ src= 'https://picsum.photos/200', ...props }: ImageProps)
         placeholder={NO_IMAGE_USER}/>)}
   </>
 )
+
+export const Product = ({ src= 'https://picsum.photos/200', ...props }: ImageProps): ReactElement => (
+  <>
+    {Array.from({length: 10}).map((_, idx) =>
+      <Image
+        key={idx}
+        height={280}
+        src={src}
+        width={235}
+        {...props}
+        block
+        placeholder={NO_IMAGE_PRODUCT}/>)}
+  </>
+)
+
 
 export const Square = ({ src= 'https://picsum.photos/200', ...props }: ImageProps): ReactElement => (
   <>
