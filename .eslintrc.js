@@ -22,13 +22,15 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:react/jsx-runtime'
+    'plugin:react/jsx-runtime',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['webpack.config.js','**/*.config.js', '.eslintrc.js', 'api/*.ts'],
   rules: {
     'react/jsx-key': 'off',
     'no-use-before-define': 'off',
     'no-redeclare': 'off',
+    "no-unused-vars": "off",
     'react/button-has-type': ['error'],
     'react/jsx-sort-props': [
       'error',
@@ -90,7 +92,8 @@ module.exports = {
     ],
     '@typescript-eslint/no-unused-expressions': 'off',
     '@typescript-eslint/no-duplicate-imports': 'error',
-    '@typescript-eslint/jsx-key': 'off'
+    '@typescript-eslint/jsx-key': 'off',
+    "@typescript-eslint/no-unused-vars": 'off'
   },
   settings: {
     react: {
