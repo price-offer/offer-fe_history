@@ -1,4 +1,5 @@
 export { default as NO_IMAGE_SQUARE } from '@assets/images/no-image_square.png'
+export { default as NO_IMAGE_USER } from '@assets/images/no-image_user.png'
 export { default as NO_IMAGE_RECTANGLE_H } from '@assets/images/no-image_rectangle-h.png'
 export { default as NO_IMAGE_RECTANGLE_W } from '@assets/images/no-image_rectangle-w.png'
 export { default as PLACE_HOLDER } from '@assets/images/placeholder.png'
