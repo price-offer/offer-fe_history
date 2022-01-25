@@ -23,6 +23,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['webpack.config.js','**/*.config.js', '.eslintrc.js', 'api/*.ts'],
   rules: {
@@ -72,27 +73,6 @@ module.exports = {
     '@typescript-eslint/no-duplicate-imports': 'error',
     '@typescript-eslint/jsx-key': 'off',
     "@typescript-eslint/no-unused-vars": 'off',
-    '@typescript-eslint/member-delimiter-style': [
-      'error',
-      {
-        multiline: {
-          delimiter: 'comma',
-          requireLast: true
-        },
-        singleline: {
-          delimiter: 'comma',
-          requireLast: false
-        },
-        overrides: {
-          interface: {
-            multiline: {
-              delimiter: 'comma',
-              requireLast: true
-            }
-          }
-        }
-      }
-    ],
   },
   settings: {
     react: {
