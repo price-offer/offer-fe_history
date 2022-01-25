@@ -47,8 +47,6 @@ const Image = ({
   const handleError = (e: SyntheticEvent<HTMLImageElement>): void => {
     const target = e.target as HTMLImageElement
 
-    console.log(type)
-
     switch (type) {
       case 'user':
         target.src = NO_IMAGE_USER
