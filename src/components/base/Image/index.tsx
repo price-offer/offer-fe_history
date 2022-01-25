@@ -45,23 +45,21 @@ const Image = ({
   const imgRef = useRef<HTMLImageElement | null>(null)
 
   const handleError = (e: SyntheticEvent<HTMLImageElement>): void => {
-    const target = e.target as HTMLImageElement
-
     switch (type) {
       case 'user':
-        target.src = NO_IMAGE_USER
+        e.currentTarget.src = NO_IMAGE_USER
         break
       case 'product':
-        target.src = NO_IMAGE_PRODUCT
+        e.currentTarget.src = NO_IMAGE_PRODUCT
         break
       case 'square':
-        target.src = NO_IMAGE_SQUARE
+        e.currentTarget.src = NO_IMAGE_SQUARE
         break
       case 'rectangleW':
-        target.src = NO_IMAGE_RECTANGLE_W
+        e.currentTarget.src = NO_IMAGE_RECTANGLE_W
         break
       case 'rectangleH':
-        target.src = NO_IMAGE_RECTANGLE_H
+        e.currentTarget.src = NO_IMAGE_RECTANGLE_H
         break
     }
   }

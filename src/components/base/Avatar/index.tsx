@@ -14,6 +14,7 @@ const Avatar = ({
     <AvatarWrapper height={height} width={width} {...props}>
       <Image
         alt="avatar"
+        border={false}
         height={height}
         mode="cover"
         placeholder={NO_IMAGE_USER}
