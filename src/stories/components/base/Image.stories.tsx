@@ -8,11 +8,16 @@ import {
   NO_IMAGE_RECTANGLE_W,
   NO_IMAGE_PRODUCT
 } from '@constants'
+import type { IStory } from '@models'
 
 export default {
   title: 'Components/Base/Image',
   component: Image,
   argTypes: {
+    border: {
+      defaultValue: true,
+      control: { type: 'boolean' }
+    },
     lazy: {
       defaultValue: true,
       control: { type: 'boolean' }
@@ -21,11 +26,6 @@ export default {
       type: { name: 'string', require: true },
       defaultValue: 'https://picsum.photos/200',
       control: { type: 'text' }
-    },
-    placeholder: {
-      defaultValue: 'square',
-      options: ['user', 'square', 'rectangleW', 'rectangleH'],
-      control: { type: 'inline-radio' }
     },
     threshold: {
       type: { name: 'number' },
@@ -39,101 +39,74 @@ export default {
       defaultValue: 'cover',
       options: ['cover', 'fill', 'contain'],
       control: { type: 'inline-radio' }
+    },
+    type: {
+      defaultValue: 'product',
+      options: ['user', 'product', 'square', 'rectangleW', 'rectangleH'],
+      control: { type: 'inline-radio' }
     }
   }
 }
 
-export const User = ({
-  src = 'https://picsum.photos/200',
-  ...props
-}: ImageProps): ReactElement => (
+const Template = (args: ImageProps): ReactElement => (
   <>
     {Array.from({ length: 10 }).map((_, idx) => (
-      <Image
-        key={idx}
-        height={200}
-        src={src}
-        width={200}
-        {...props}
-        block
-        placeholder={NO_IMAGE_USER}
-      />
+      <Image key={idx} {...args} />
     ))}
   </>
 )
 
-export const Product = ({
-  src = 'https://picsum.photos/200',
-  ...props
-}: ImageProps): ReactElement => (
-  <>
-    {Array.from({ length: 10 }).map((_, idx) => (
-      <Image
-        key={idx}
-        height={280}
-        src={src}
-        width={235}
-        {...props}
-        block
-        placeholder={NO_IMAGE_PRODUCT}
-      />
-    ))}
-  </>
-)
+export const User = Template.bind({}) as IStory<ImageProps>
+User.args = {
+  src: 'https://picsum.photos/200',
+  mode: 'cover',
+  type: 'user',
+  width: 200,
+  height: 200,
+  block: true,
+  placeholder: NO_IMAGE_USER
+}
 
-export const Square = ({
-  src = 'https://picsum.photos/200',
-  ...props
-}: ImageProps): ReactElement => (
-  <>
-    {Array.from({ length: 10 }).map((_, idx) => (
-      <Image
-        key={idx}
-        height={200}
-        src={src}
-        width={200}
-        {...props}
-        block
-        placeholder={NO_IMAGE_SQUARE}
-      />
-    ))}
-  </>
-)
+export const Product = Template.bind({}) as IStory<ImageProps>
+Product.args = {
+  src: 'https://picsum.photos/200',
+  mode: 'cover',
+  type: 'product',
+  width: 235,
+  height: 280,
+  block: true,
+  placeholder: NO_IMAGE_PRODUCT
+}
 
-export const RectangleW = ({
-  src = 'https://picsum.photos/400',
-  ...props
-}: ImageProps): ReactElement => (
-  <>
-    {Array.from({ length: 10 }).map((_, idx) => (
-      <Image
-        key={idx}
-        height={200}
-        src={src}
-        width={400}
-        {...props}
-        block
-        placeholder={NO_IMAGE_RECTANGLE_W}
-      />
-    ))}
-  </>
-)
+export const Square = Template.bind({}) as IStory<ImageProps>
+Square.args = {
+  src: 'https://picsum.photos/200',
+  mode: 'cover',
+  type: 'square',
+  width: 200,
+  height: 200,
+  block: true,
+  placeholder: NO_IMAGE_SQUARE
+}
 
-export const RectangleH = ({
-  src = 'https://picsum.photos/200',
-  ...props
-}: ImageProps): ReactElement => (
-  <>
-    {Array.from({ length: 10 }).map((_, idx) => (
-      <Image
-        key={idx}
-        height={400}
-        src={src}
-        width={200}
-        {...props}
-        block
-        placeholder={NO_IMAGE_RECTANGLE_H}
-      />
-    ))}
-  </>
-)
+export const RectangleW = Template.bind({}) as IStory<ImageProps>
+RectangleW.args = {
+  src: 'https://picsum.photos/400',
+  mode: 'cover',
+  type: 'rectangleW',
+  width: 400,
+  height: 200,
+  block: true,
+  placeholder: NO_IMAGE_RECTANGLE_W
+}
+
+export const RectangleH = Template.bind({}) as IStory<ImageProps>
+RectangleH.args = {
+  src: 'https://picsum.photos/200',
+  mode: 'cover',
+  type: 'rectangleH',
+  width: 200,
+  height: 400,
+  block: true,
+  placeholder: NO_IMAGE_RECTANGLE_H
+}

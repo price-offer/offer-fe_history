@@ -1,7 +1,14 @@
-import type { ReactElement } from 'react'
+import type { ReactElement, SyntheticEvent } from 'react'
 import type { ImageProps } from './types'
 import { useRef, useEffect, useState } from 'react'
 import StyledImg from './styled'
+import {
+  NO_IMAGE_USER,
+  NO_IMAGE_SQUARE,
+  NO_IMAGE_PRODUCT,
+  NO_IMAGE_RECTANGLE_W,
+  NO_IMAGE_RECTANGLE_H
+} from '@constants'
 
 const LOAD_IMG_EVENT = 'loadImage'
 const DEFAULT_THRESHOLD = 0.2
@@ -27,6 +34,8 @@ const Image = ({
   height,
   alt,
   mode = 'cover',
+  type = 'square',
+  border = true,
   block = false,
   placeholder,
   threshold = DEFAULT_THRESHOLD,
@@ -34,6 +43,30 @@ const Image = ({
 }: ImageProps): ReactElement => {
   const [loaded, setLoaded] = useState(false)
   const imgRef = useRef<HTMLImageElement | null>(null)
+
+  const handleError = (e: SyntheticEvent<HTMLImageElement>): void => {
+    const target = e.target as HTMLImageElement
+
+    console.log(type)
+
+    switch (type) {
+      case 'user':
+        target.src = NO_IMAGE_USER
+        break
+      case 'product':
+        target.src = NO_IMAGE_PRODUCT
+        break
+      case 'square':
+        target.src = NO_IMAGE_SQUARE
+        break
+      case 'rectangleW':
+        target.src = NO_IMAGE_RECTANGLE_W
+        break
+      case 'rectangleH':
+        target.src = NO_IMAGE_RECTANGLE_H
+        break
+    }
+  }
 
   useEffect(() => {
     if (!lazy) {
@@ -72,10 +105,12 @@ const Image = ({
       ref={imgRef}
       alt={alt}
       block={block}
+      border={border}
       height={height}
       mode={mode}
       src={loaded ? src : placeholder}
       width={width}
+      onError={handleError}
       {...props}
     />
   )
