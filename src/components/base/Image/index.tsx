@@ -77,7 +77,7 @@ const Image = ({
       src={loaded ? src : placeholder}
       width={width}
       {...props}
-      />
+    />
   )
 }
 

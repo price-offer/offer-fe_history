@@ -1,45 +1,54 @@
-import type { ReactElement } from "react"
-import Image from "@base/Image"
+import type { ReactElement } from 'react'
+import Image from '@base/Image'
 import type { ImageProps } from '@base/Image/types'
-import { NO_IMAGE_USER, NO_IMAGE_SQUARE, NO_IMAGE_RECTANGLE_H, NO_IMAGE_RECTANGLE_W, NO_IMAGE_PRODUCT  } from '@constants'
+import {
+  NO_IMAGE_USER,
+  NO_IMAGE_SQUARE,
+  NO_IMAGE_RECTANGLE_H,
+  NO_IMAGE_RECTANGLE_W,
+  NO_IMAGE_PRODUCT
+} from '@constants'
 
 export default {
-  title: 'Component/Base/Image',
+  title: 'Components/Base/Image',
   component: Image,
   argTypes: {
     lazy: {
       defaultValue: true,
-      control: { type: 'boolean' },
+      control: { type: 'boolean' }
     },
     src: {
       type: { name: 'string', require: true },
       defaultValue: 'https://picsum.photos/200',
-      control: { type: 'text' },
+      control: { type: 'text' }
     },
     placeholder: {
       defaultValue: 'square',
-      options: ['user','square','rectangleW','rectangleH'],
-      control: { type: 'inline-radio' },
+      options: ['user', 'square', 'rectangleW', 'rectangleH'],
+      control: { type: 'inline-radio' }
     },
     threshold: {
       type: { name: 'number' },
       defaultValue: 0.2,
-      control: { type: 'number' },
+      control: { type: 'number' }
     },
     alt: {
-      control: 'string',
+      control: 'string'
     },
     mode: {
       defaultValue: 'cover',
       options: ['cover', 'fill', 'contain'],
-      control: { type: 'inline-radio' },
-    },
+      control: { type: 'inline-radio' }
+    }
   }
 }
 
-export const User = ({ src= 'https://picsum.photos/200', ...props }: ImageProps): ReactElement => (
+export const User = ({
+  src = 'https://picsum.photos/200',
+  ...props
+}: ImageProps): ReactElement => (
   <>
-    {Array.from({length: 10}).map((_, idx) =>
+    {Array.from({ length: 10 }).map((_, idx) => (
       <Image
         key={idx}
         height={200}
@@ -47,13 +56,18 @@ export const User = ({ src= 'https://picsum.photos/200', ...props }: ImageProps)
         width={200}
         {...props}
         block
-        placeholder={NO_IMAGE_USER}/>)}
+        placeholder={NO_IMAGE_USER}
+      />
+    ))}
   </>
 )
 
-export const Product = ({ src= 'https://picsum.photos/200', ...props }: ImageProps): ReactElement => (
+export const Product = ({
+  src = 'https://picsum.photos/200',
+  ...props
+}: ImageProps): ReactElement => (
   <>
-    {Array.from({length: 10}).map((_, idx) =>
+    {Array.from({ length: 10 }).map((_, idx) => (
       <Image
         key={idx}
         height={280}
@@ -61,14 +75,18 @@ export const Product = ({ src= 'https://picsum.photos/200', ...props }: ImagePro
         width={235}
         {...props}
         block
-        placeholder={NO_IMAGE_PRODUCT}/>)}
+        placeholder={NO_IMAGE_PRODUCT}
+      />
+    ))}
   </>
 )
 
-
-export const Square = ({ src= 'https://picsum.photos/200', ...props }: ImageProps): ReactElement => (
+export const Square = ({
+  src = 'https://picsum.photos/200',
+  ...props
+}: ImageProps): ReactElement => (
   <>
-    {Array.from({length: 10}).map((_, idx) =>
+    {Array.from({ length: 10 }).map((_, idx) => (
       <Image
         key={idx}
         height={200}
@@ -76,13 +94,18 @@ export const Square = ({ src= 'https://picsum.photos/200', ...props }: ImageProp
         width={200}
         {...props}
         block
-        placeholder={NO_IMAGE_SQUARE}/>)}
+        placeholder={NO_IMAGE_SQUARE}
+      />
+    ))}
   </>
 )
 
-export const RectangleW = ({ src= 'https://picsum.photos/400', ...props }: ImageProps): ReactElement => (
+export const RectangleW = ({
+  src = 'https://picsum.photos/400',
+  ...props
+}: ImageProps): ReactElement => (
   <>
-    {Array.from({length: 10}).map((_, idx) =>
+    {Array.from({ length: 10 }).map((_, idx) => (
       <Image
         key={idx}
         height={200}
@@ -90,14 +113,18 @@ export const RectangleW = ({ src= 'https://picsum.photos/400', ...props }: Image
         width={400}
         {...props}
         block
-        placeholder={NO_IMAGE_RECTANGLE_W}/>)}
+        placeholder={NO_IMAGE_RECTANGLE_W}
+      />
+    ))}
   </>
 )
 
-
-export const RectangleH = ({ src= 'https://picsum.photos/200', ...props }: ImageProps): ReactElement => (
+export const RectangleH = ({
+  src = 'https://picsum.photos/200',
+  ...props
+}: ImageProps): ReactElement => (
   <>
-    {Array.from({length: 10}).map((_, idx) =>
+    {Array.from({ length: 10 }).map((_, idx) => (
       <Image
         key={idx}
         height={400}
@@ -105,7 +132,8 @@ export const RectangleH = ({ src= 'https://picsum.photos/200', ...props }: Image
         width={200}
         {...props}
         block
-        placeholder={NO_IMAGE_RECTANGLE_H}/>)}
+        placeholder={NO_IMAGE_RECTANGLE_H}
+      />
+    ))}
   </>
 )
-
