@@ -23,6 +23,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['webpack.config.js','**/*.config.js', '.eslintrc.js', 'api/*.ts'],
   rules: {
@@ -58,41 +59,10 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/no-redeclare': 'error',
-    '@typescript-eslint/no-magic-numbers': [
-      'error',
-      {
-        ignore: [
-          -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-        ],
-        ignoreArrayIndexes: true,
-        ignoreEnums: true
-      }
-    ],
     '@typescript-eslint/no-unused-expressions': 'off',
     '@typescript-eslint/no-duplicate-imports': 'error',
     '@typescript-eslint/jsx-key': 'off',
     "@typescript-eslint/no-unused-vars": 'off',
-    '@typescript-eslint/member-delimiter-style': [
-      'error',
-      {
-        multiline: {
-          delimiter: 'comma',
-          requireLast: true
-        },
-        singleline: {
-          delimiter: 'comma',
-          requireLast: false
-        },
-        overrides: {
-          interface: {
-            multiline: {
-              delimiter: 'comma',
-              requireLast: true
-            }
-          }
-        }
-      }
-    ],
   },
   settings: {
     react: {
