@@ -22,6 +22,7 @@
       "@data/*": ["data/*"],
       "@constants": ["data/constants"],
       "@constants/*": ["data/constants/*"],
+      "@models": ["data/models"],
       "@utils": ["utils"],
       "@utils/*": ["utils/*"],
       "@libs": ["utils/libs"],

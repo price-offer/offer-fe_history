@@ -32,6 +32,10 @@ module.exports = {
       __dirname,
       '../src/data/constants',
     );
+    config.resolve.alias['@models'] = path.resolve(
+      __dirname,
+      '../src/data/models',
+    );
     config.resolve.alias['@hooks'] = path.resolve(__dirname, '../src/hooks');
     config.resolve.alias['@api'] = path.resolve(
       __dirname,
