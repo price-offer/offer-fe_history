@@ -1,8 +1,0 @@
-export const BACKGROUND_COLOR = '#FFFFFF'
-export const BORDER = '#CCCCCC'
-export const FONT = 'rgba(0, 0, 0, 0.9)'
-export const FONT_GRAY = '#888888'
-export const FONT_KAKAO = ' #4D2121'
-export const KAKAO = ' #FCEC4F'
-export const OPACITY = 'rgba(0, 0, 0, 0.5)'
-export const PRIMARY = '#F74F2A'
