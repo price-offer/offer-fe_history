@@ -12,7 +12,7 @@ import {
 } from '@constants'
 import type { ButtonTheme, styledButtonProps } from './types'
 
-const converThemeToStyle = (theme: ButtonTheme): string => {
+const applyThemeStyle = (theme: ButtonTheme): string => {
   switch (theme) {
     case 'disabled':
       return `
@@ -64,7 +64,7 @@ const StyledButton = styled.button<styledButtonProps>`
   border-radius: 3px;
   font-size: ${({ fontSize = 'SM' }): string => FONT_SIZE[fontSize]};
   font-weight: ${({ strong }): number => (strong ? 600 : 400)};
-  ${({ theme }): string => converThemeToStyle(theme)}
+  ${({ theme }): string => applyThemeStyle(theme)};
 `
 
 export default StyledButton
