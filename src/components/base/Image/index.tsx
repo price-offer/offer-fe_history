@@ -3,11 +3,11 @@ import type { ImageProps } from './types'
 import { useRef, useEffect, useState } from 'react'
 import StyledImg from './styled'
 import {
-  NO_IMAGE_USER,
-  NO_IMAGE_SQUARE,
-  NO_IMAGE_PRODUCT,
-  NO_IMAGE_RECTANGLE_W,
-  NO_IMAGE_RECTANGLE_H
+  NO_IMAGE_USER_IMG,
+  NO_IMAGE_SQUARE_IMG,
+  NO_IMAGE_PRODUCT_IMG,
+  NO_IMAGE_RECTANGLE_W_IMG,
+  NO_IMAGE_RECTANGLE_H_IMG
 } from '@constants'
 
 const LOAD_IMG_EVENT = 'loadImage'
@@ -47,19 +47,19 @@ const Image = ({
   const handleError = (e: SyntheticEvent<HTMLImageElement>): void => {
     switch (type) {
       case 'user':
-        e.currentTarget.src = NO_IMAGE_USER
+        e.currentTarget.src = NO_IMAGE_USER_IMG
         break
       case 'product':
-        e.currentTarget.src = NO_IMAGE_PRODUCT
+        e.currentTarget.src = NO_IMAGE_PRODUCT_IMG
         break
       case 'square':
-        e.currentTarget.src = NO_IMAGE_SQUARE
+        e.currentTarget.src = NO_IMAGE_SQUARE_IMG
         break
       case 'rectangleW':
-        e.currentTarget.src = NO_IMAGE_RECTANGLE_W
+        e.currentTarget.src = NO_IMAGE_RECTANGLE_W_IMG
         break
       case 'rectangleH':
-        e.currentTarget.src = NO_IMAGE_RECTANGLE_H
+        e.currentTarget.src = NO_IMAGE_RECTANGLE_H_IMG
         break
     }
   }
