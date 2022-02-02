@@ -17,9 +17,8 @@ const Avatar = ({
         border={false}
         height={height}
         mode="cover"
-        placeholder={NO_IMAGE_USER_IMG}
+        placeholder="user"
         src={src || NO_IMAGE_USER_IMG}
-        type="user"
         width={width}
       />
     </AvatarWrapper>

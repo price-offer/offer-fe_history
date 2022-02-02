@@ -1,13 +1,6 @@
 import type { ReactElement } from 'react'
 import Image from '@base/Image'
 import type { ImageProps } from '@base/Image/types'
-import {
-  NO_IMAGE_USER,
-  NO_IMAGE_SQUARE,
-  NO_IMAGE_RECTANGLE_H,
-  NO_IMAGE_RECTANGLE_W,
-  NO_IMAGE_PRODUCT
-} from '@constants'
 import type { IStory } from '@models'
 
 export default {
@@ -40,7 +33,7 @@ export default {
       options: ['cover', 'fill', 'contain'],
       control: { type: 'inline-radio' }
     },
-    type: {
+    placeholder: {
       defaultValue: 'product',
       options: ['user', 'product', 'square', 'rectangleW', 'rectangleH'],
       control: { type: 'inline-radio' }
@@ -60,53 +53,48 @@ export const User = Template.bind({}) as IStory<ImageProps>
 User.args = {
   src: 'https://picsum.photos/200',
   mode: 'cover',
-  type: 'user',
+  placeholder: 'user',
   width: 200,
   height: 200,
-  block: true,
-  placeholder: NO_IMAGE_USER
+  block: true
 }
 
 export const Product = Template.bind({}) as IStory<ImageProps>
 Product.args = {
   src: 'https://picsum.photos/200',
   mode: 'cover',
-  type: 'product',
+  placeholder: 'product',
   width: 235,
   height: 280,
-  block: true,
-  placeholder: NO_IMAGE_PRODUCT
+  block: true
 }
 
 export const Square = Template.bind({}) as IStory<ImageProps>
 Square.args = {
   src: 'https://picsum.photos/200',
   mode: 'cover',
-  type: 'square',
+  placeholder: 'square',
   width: 200,
   height: 200,
-  block: true,
-  placeholder: NO_IMAGE_SQUARE
+  block: true
 }
 
 export const RectangleW = Template.bind({}) as IStory<ImageProps>
 RectangleW.args = {
   src: 'https://picsum.photos/400',
   mode: 'cover',
-  type: 'rectangleW',
+  placeholder: 'rectangleW',
   width: 400,
   height: 200,
-  block: true,
-  placeholder: NO_IMAGE_RECTANGLE_W
+  block: true
 }
 
 export const RectangleH = Template.bind({}) as IStory<ImageProps>
 RectangleH.args = {
   src: 'https://picsum.photos/200',
   mode: 'cover',
-  type: 'rectangleH',
+  placeholder: 'rectangleH',
   width: 200,
   height: 400,
-  block: true,
-  placeholder: NO_IMAGE_RECTANGLE_H
+  block: true
 }

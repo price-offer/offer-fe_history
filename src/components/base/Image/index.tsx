@@ -1,6 +1,6 @@
 import type { ReactElement, SyntheticEvent } from 'react'
-import type { ImageProps } from './types'
-import { useRef, useEffect, useState } from 'react'
+import type { ImagePlaceholerType, ImageProps } from './types'
+import { useRef, useEffect, useState, useCallback } from 'react'
 import StyledImg from './styled'
 import {
   NO_IMAGE_USER_IMG,
@@ -27,42 +27,43 @@ const onIntersection = (
   })
 }
 
+const convertPlaceholderToImg = (placeholder: ImagePlaceholerType): string => {
+  switch (placeholder) {
+    case 'user':
+      return NO_IMAGE_USER_IMG
+    case 'product':
+      return NO_IMAGE_PRODUCT_IMG
+    case 'square':
+      return NO_IMAGE_SQUARE_IMG
+    case 'rectangleW':
+      return NO_IMAGE_RECTANGLE_W_IMG
+    case 'rectangleH':
+      return NO_IMAGE_RECTANGLE_H_IMG
+  }
+}
+
 const Image = ({
   lazy = true,
   src,
   width,
   height,
-  alt,
   mode = 'cover',
-  type = 'square',
   border = true,
   block = false,
-  placeholder,
+  placeholder = 'square',
   threshold = DEFAULT_THRESHOLD,
   ...props
 }: ImageProps): ReactElement => {
   const [loaded, setLoaded] = useState(false)
   const imgRef = useRef<HTMLImageElement | null>(null)
 
-  const handleError = (e: SyntheticEvent<HTMLImageElement>): void => {
-    switch (type) {
-      case 'user':
-        e.currentTarget.src = NO_IMAGE_USER_IMG
-        break
-      case 'product':
-        e.currentTarget.src = NO_IMAGE_PRODUCT_IMG
-        break
-      case 'square':
-        e.currentTarget.src = NO_IMAGE_SQUARE_IMG
-        break
-      case 'rectangleW':
-        e.currentTarget.src = NO_IMAGE_RECTANGLE_W_IMG
-        break
-      case 'rectangleH':
-        e.currentTarget.src = NO_IMAGE_RECTANGLE_H_IMG
-        break
-    }
-  }
+  const handleError = useCallback(
+    (e: SyntheticEvent<HTMLImageElement>): void => {
+      const imgPath = convertPlaceholderToImg(placeholder)
+      e.currentTarget.src = imgPath
+    },
+    [placeholder]
+  )
 
   useEffect(() => {
     if (!lazy) {
@@ -75,15 +76,10 @@ const Image = ({
     }
 
     const imgElement = imgRef.current
-
-    if (imgElement) {
-      imgElement?.addEventListener(LOAD_IMG_EVENT, handleLoadImg)
-    }
+    imgElement?.addEventListener(LOAD_IMG_EVENT, handleLoadImg)
 
     return (): void => {
-      if (imgElement) {
-        imgElement?.removeEventListener(LOAD_IMG_EVENT, handleLoadImg)
-      }
+      imgElement?.removeEventListener(LOAD_IMG_EVENT, handleLoadImg)
     }
   }, [lazy])
 
@@ -99,12 +95,11 @@ const Image = ({
   return (
     <StyledImg
       ref={imgRef}
-      alt={alt}
       block={block}
       border={border}
       height={height}
       mode={mode}
-      src={loaded ? src : placeholder}
+      src={loaded ? src : convertPlaceholderToImg(placeholder)}
       width={width}
       onError={handleError}
       {...props}
