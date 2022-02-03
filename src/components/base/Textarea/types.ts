@@ -1,12 +1,14 @@
 import type { HTMLAttributes } from 'react'
+import type { FONT_SIZE } from '@constants'
+
+type TextFontSizeKeys = keyof typeof FONT_SIZE
 
 interface TextareaProps extends HTMLAttributes<HTMLTextAreaElement> {
-  children?: string | number
-  width?: string
-  height?: string
-  fontSize?: number
+  children?: number | string
+  width?: number | string
+  height?: number | string
+  fontSize?: TextFontSizeKeys
   maxLength?: number
-  lineHeight?: number
 }
 
 type StyledTextareaProps = Omit<TextareaProps, 'children' | 'maxLength'>

@@ -1,21 +1,21 @@
 import styled from '@emotion/styled'
 import type { StyledTextareaProps } from './types'
-import { FONT_GRAY, BORDER } from '@utils/constant'
+import { DARK_GRAY, WHITE_GRAY, FONT_SIZE } from '@constants'
 
 const StyledTextarea = styled.textarea<StyledTextareaProps>`
-  width: ${({ width }): string => (width ? width : '100%')};
-  height: ${({ height }): string => (height ? height : '100%')};
+  width: ${({ width }): string =>
+    typeof width === 'string' ? width : `${width}px`};
+  height: ${({ height }): string =>
+    typeof height === 'string' ? height : `${height}px`};
   padding: 5px 10px;
-  border: ${BORDER} 1px solid;
-  font-size: ${({ fontSize }): string => (fontSize ? `${fontSize}px` : '16px')};
-  line-height: ${({ lineHeight }): string | undefined =>
-    lineHeight ? `${lineHeight}px` : undefined};
+  box-sizing: border-box;
+  border: ${WHITE_GRAY} 1px solid;
+  font-size: ${({ fontSize = 'SM' }): string => FONT_SIZE[fontSize]};
   font-family: inherit;
   resize: none;
-  box-sizing: border-box;
 
   &::placeholder {
-    color: ${FONT_GRAY};
+    color: ${DARK_GRAY};
   }
 `
 export { StyledTextarea }
