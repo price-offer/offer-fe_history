@@ -5,27 +5,23 @@ import type { TextProps } from './types'
 const Text = ({
   children,
   fontSize,
-  fontColor,
+  color,
   strong,
   block,
   underline,
-  clickable,
-  textBackground,
+  theme = 'primary',
   ...props
-}: TextProps): ReactElement => {
-  return (
-    <StyledText
-      block={block}
-      clickable={clickable}
-      fontColor={fontColor}
-      fontSize={fontSize}
-      strong={strong}
-      textBackground={textBackground}
-      underline={underline}
-      {...props}>
-      {children}
-    </StyledText>
-  )
-}
+}: TextProps): ReactElement => (
+  <StyledText
+    block={block}
+    color={color}
+    fontSize={fontSize}
+    strong={strong}
+    theme={theme}
+    underline={underline}
+    {...props}>
+    {children}
+  </StyledText>
+)
 
 export default Text
