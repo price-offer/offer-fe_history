@@ -1,12 +1,12 @@
 import type { HTMLAttributes } from 'react'
 
-type dividerType = 'vertical' | 'horizontal'
+type directionType = 'vertical' | 'horizontal'
 
 interface DividerProps extends HTMLAttributes<HTMLHRElement> {
-  type: dividerType
-  marginSize?: string
-  borderSize?: string
-  lineThickness?: number
+  direction: directionType
+  gap?: string
+  size?: string
+  color?: string
 }
 
-export type { DividerProps, dividerType }
+export type { DividerProps, directionType }

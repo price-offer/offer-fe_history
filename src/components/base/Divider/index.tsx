@@ -2,22 +2,20 @@ import type { ReactElement } from 'react'
 import { StyledDivider } from './styled'
 import type { DividerProps } from './types'
 
-export const Divider = ({
-  type = 'vertical',
-  marginSize,
-  borderSize,
-  lineThickness,
+const Divider = ({
+  color,
+  direction = 'vertical',
+  gap,
+  size,
   ...props
-}: DividerProps): ReactElement => {
-  return (
-    <StyledDivider
-      borderSize={borderSize}
-      lineThickness={lineThickness}
-      marginSize={marginSize}
-      type={type}
-      {...props}
-    />
-  )
-}
+}: DividerProps): ReactElement => (
+  <StyledDivider
+    color={color}
+    direction={direction}
+    gap={gap}
+    size={size}
+    {...props}
+  />
+)
 
 export default Divider

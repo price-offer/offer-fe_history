@@ -2,26 +2,28 @@ import Divider from '@components/base/Divider'
 import type { DividerProps } from '@base/Divider/types'
 import type { ReactElement } from 'react'
 import type { IStory } from '@models'
+import { WHITE_GRAY } from '@constants'
 
 export default {
-  title: 'Component/Base/Divider',
+  title: 'Components/Base/Divider',
   component: Divider,
   argTypes: {
-    type: {
+    direction: {
       defaultValue: 'vertical',
+      options: ['vertical', 'horizontal'],
+      control: { type: 'inline-radio' }
+    },
+    gap: {
+      defaultValue: '10px',
       control: 'text'
     },
-    marginSize: {
-      defaultValue: '30px',
-      control: 'text'
-    },
-    borderSize: {
+    size: {
       defaultValue: '20px',
       control: 'text'
     },
-    lineThickness: {
-      defaultValue: 1,
-      control: 'number'
+    color: {
+      defaultValue: WHITE_GRAY,
+      control: 'color'
     }
   }
 }
@@ -29,23 +31,23 @@ export default {
 const Template = (args: DividerProps): ReactElement => (
   <>
     <span>Text</span>
-    <Divider type="vertical" {...args} />
+    <Divider {...args} />
     <span>Text</span>
   </>
 )
 
 export const Vertical = Template.bind({}) as IStory<DividerProps>
 Vertical.args = {
-  type: 'vertical',
-  marginSize: '10px',
-  borderSize: '12px',
-  lineThickness: 1
+  direction: 'vertical',
+  gap: '10px',
+  size: '12px',
+  color: WHITE_GRAY
 }
 
 export const Horizontal = Template.bind({}) as IStory<DividerProps>
 Horizontal.args = {
-  type: 'horizontal',
-  marginSize: '20px',
-  borderSize: '350px',
-  lineThickness: 1
+  direction: 'horizontal',
+  gap: '10px',
+  size: '350px',
+  color: WHITE_GRAY
 }

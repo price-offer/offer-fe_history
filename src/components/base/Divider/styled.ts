@@ -1,29 +1,29 @@
 import styled from '@emotion/styled'
 import type { CSSObject } from '@emotion/styled'
-import type { DividerProps } from './types'
-import { BORDER } from '@utils/constant'
+import type { DividerProps, directionType } from './types'
+import { WHITE_GRAY } from '@constants'
 
 const StyledDivider = styled.hr<DividerProps>`
   border: none;
-  background-color: ${BORDER};
+  background-color: ${({ color }): string => (color ? color : WHITE_GRAY)};
 
-  ${({ type, marginSize, borderSize, lineThickness }): CSSObject =>
-    type === 'horizontal'
+  ${({ direction, size, gap }): CSSObject =>
+    direction === 'horizontal'
       ? {
-          width: `${borderSize ? borderSize : '350px'}`,
+          width: `${size ? size : '350px'}`,
           display: 'block',
-          height: lineThickness ? `${lineThickness}px` : '1px',
-          margin: marginSize ? `${marginSize} 0` : '10px 0'
+          height: '1px',
+          margin: gap ? `${gap} 0` : '10px 0'
         }
       : {
           position: 'relative',
           top: '-1px',
           display: 'inline-block',
-          width: lineThickness ? `${lineThickness}px` : '1px',
-          height: `${borderSize ? borderSize : '15px'}`,
+          width: '1px',
+          height: `${size ? size : '15px'}`,
           verticalAlign: 'middle',
-          margin: marginSize ? `0 ${marginSize}` : '0 10px'
-        }}
+          margin: gap ? `0 ${gap}` : '0 10px'
+        }};
 `
 
 export { StyledDivider }
