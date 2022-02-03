@@ -10,19 +10,19 @@ const StyledDivider = styled.hr<DividerProps>`
   ${({ direction, size, gap }): CSSObject =>
     direction === 'horizontal'
       ? {
-          width: `${size ? size : '350px'}`,
           display: 'block',
+          width: typeof size === 'string' ? size : `${size}px`,
           height: '1px',
-          margin: gap ? `${gap} 0` : '10px 0'
+          margin: typeof gap === 'string' ? `${gap} 0` : `${gap}px 0`
         }
       : {
+          display: 'inline-block',
           position: 'relative',
           top: '-1px',
-          display: 'inline-block',
           width: '1px',
-          height: `${size ? size : '15px'}`,
-          verticalAlign: 'middle',
-          margin: gap ? `0 ${gap}` : '0 10px'
+          height: typeof size === 'string' ? size : `${size}px`,
+          margin: typeof gap === 'string' ? `0 ${gap}` : `0 ${gap}px`,
+          verticalAlign: 'middle'
         }};
 `
 

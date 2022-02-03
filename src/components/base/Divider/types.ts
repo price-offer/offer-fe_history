@@ -4,8 +4,8 @@ type directionType = 'vertical' | 'horizontal'
 
 interface DividerProps extends HTMLAttributes<HTMLHRElement> {
   direction: directionType
-  gap?: string
-  size?: string
+  gap?: string | number
+  size?: string | number
   color?: string
 }
 

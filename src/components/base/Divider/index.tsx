@@ -5,8 +5,8 @@ import type { DividerProps } from './types'
 const Divider = ({
   color,
   direction = 'vertical',
-  gap,
-  size,
+  gap = '10px',
+  size = '15px',
   ...props
 }: DividerProps): ReactElement => (
   <StyledDivider
