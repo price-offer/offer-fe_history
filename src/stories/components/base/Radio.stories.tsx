@@ -47,15 +47,15 @@ export default {
 
 const Template = (args: RadioProps): ReactElement => <Radio {...args} />
 
-export const VerticalRadio = Template.bind({}) as IStory<RadioProps>
-VerticalRadio.args = {
+export const Vertical = Template.bind({}) as IStory<RadioProps>
+Vertical.args = {
   radioItemList: DUMMY_DATA,
   direction: 'vertical',
   radioName: 'tradeMethod'
 }
 
-export const HorizontalRadio = Template.bind({}) as IStory<RadioProps>
-HorizontalRadio.args = {
+export const Horizontal = Template.bind({}) as IStory<RadioProps>
+Horizontal.args = {
   radioItemList: DUMMY_DATA,
   direction: 'horizontal',
   radioName: 'tradeMethod'

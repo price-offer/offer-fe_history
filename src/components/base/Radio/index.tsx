@@ -4,7 +4,7 @@ import { StyledForm, StyledInput, StyledLabel } from './styled'
 
 export const Radio = ({
   radioItemList,
-  direction,
+  direction = 'vertical',
   radioName,
   radioSize,
   fontSize,

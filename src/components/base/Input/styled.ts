@@ -10,7 +10,7 @@ const StyledInput = styled.input<StyledInputProps>`
   padding: 0 10px;
   box-sizing: border-box;
   border: 1px solid ${WHITE_GRAY};
-  border-radius: ${({ round }): string => (round ? '10px' : 'none')};
+  border-radius: ${({ round }): string => (round ? '3px' : 'none')};
   font-size: ${({ fontSize = 'SM' }): string => FONT_SIZE[fontSize]};
 
   &::placeholder {

@@ -6,8 +6,8 @@ type directionType = 'vertical' | 'horizontal'
 type TextFontSizeKeys = keyof typeof FONT_SIZE
 
 interface RadioProps extends HtmlHTMLAttributes<HTMLInputElement> {
-  radioItemList?: IItemType[]
-  radioName?: string
+  radioItemList: IItemType[]
+  radioName: string
   direction?: directionType
   radioSize?: number | string
   fontSize?: TextFontSizeKeys
