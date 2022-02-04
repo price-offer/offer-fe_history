@@ -1,6 +1,5 @@
 import Avatar from '@base/Avatar'
 import type { AvatarProps } from '@base/Avatar/types'
-import type { ReactElement } from 'react'
 import type { IStory } from '@models'
 
 export default {
@@ -21,16 +20,16 @@ export default {
   }
 }
 
-const Template = (args: AvatarProps): ReactElement => <Avatar {...args} />
+const Template: IStory<AvatarProps> = args => <Avatar {...args} />
 
-export const NoUser = Template.bind({}) as IStory<AvatarProps>
+export const NoUser = Template.bind({})
 NoUser.args = {
   src: '',
   width: 50,
   height: 50
 }
 
-export const User = Template.bind({}) as IStory<AvatarProps>
+export const User = Template.bind({})
 User.args = {
   src: 'https://picsum.photos/50',
   width: 50,

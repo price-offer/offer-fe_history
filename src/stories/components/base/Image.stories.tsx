@@ -1,4 +1,3 @@
-import type { ReactElement } from 'react'
 import Image from '@base/Image'
 import type { ImageProps } from '@base/Image/types'
 import type { IStory } from '@models'
@@ -41,7 +40,7 @@ export default {
   }
 }
 
-const Template = (args: ImageProps): ReactElement => (
+const Template: IStory<ImageProps> = args => (
   <>
     {Array.from({ length: 10 }).map((_, idx) => (
       <Image key={idx} {...args} />
@@ -49,7 +48,7 @@ const Template = (args: ImageProps): ReactElement => (
   </>
 )
 
-export const User = Template.bind({}) as IStory<ImageProps>
+export const User = Template.bind({})
 User.args = {
   src: 'https://picsum.photos/200',
   mode: 'cover',
@@ -59,7 +58,7 @@ User.args = {
   block: true
 }
 
-export const Product = Template.bind({}) as IStory<ImageProps>
+export const Product = Template.bind({})
 Product.args = {
   src: 'https://picsum.photos/200',
   mode: 'cover',
@@ -69,7 +68,7 @@ Product.args = {
   block: true
 }
 
-export const Square = Template.bind({}) as IStory<ImageProps>
+export const Square = Template.bind({})
 Square.args = {
   src: 'https://picsum.photos/200',
   mode: 'cover',
@@ -79,7 +78,7 @@ Square.args = {
   block: true
 }
 
-export const RectangleW = Template.bind({}) as IStory<ImageProps>
+export const RectangleW = Template.bind({})
 RectangleW.args = {
   src: 'https://picsum.photos/400',
   mode: 'cover',
@@ -89,7 +88,7 @@ RectangleW.args = {
   block: true
 }
 
-export const RectangleH = Template.bind({}) as IStory<ImageProps>
+export const RectangleH = Template.bind({})
 RectangleH.args = {
   src: 'https://picsum.photos/200',
   mode: 'cover',

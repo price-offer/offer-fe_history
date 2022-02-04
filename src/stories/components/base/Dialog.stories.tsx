@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import Button from '@base/Button'
 import Dialog from '@base/Dialog'
 import type { DialogProps } from '@base/Dialog/types'
@@ -43,9 +44,9 @@ const Template: IStory<DialogProps<HTMLUListElement>> = args => {
   )
 }
 
-export const HeaderDialog: IStory<DialogProps<HTMLUListElement>> =
-  Template.bind({})
+export const HeaderDialog = Template.bind({})
 HeaderDialog.args = {
+  visible: false,
   dialogItemList: [
     {
       href: 'profile',
@@ -65,33 +66,22 @@ HeaderDialog.args = {
     },
     {
       text: '로그아웃',
-      onClick: (e): void => {
-        e.preventDefault()
-        console.log('로그아웃')
-      }
+      onClick: action('로그아웃!')
     }
-  ],
-  visible: false
+  ]
 }
 
-export const ProductDialog: IStory<DialogProps<HTMLUListElement>> =
-  Template.bind({})
+export const ProductDialog = Template.bind({})
 ProductDialog.args = {
+  visible: false,
   dialogItemList: [
     {
       text: '게시글 수정',
-      onClick: (e): void => {
-        e.preventDefault()
-        console.log('게시글 수정')
-      }
+      onClick: action('게시글 수정!')
     },
     {
       text: '게시글 삭제',
-      onClick: (e): void => {
-        e.preventDefault()
-        console.log('게시글 삭제')
-      }
+      onClick: action('게시글 삭제!')
     }
-  ],
-  visible: false
+  ]
 }
