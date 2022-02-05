@@ -1,8 +1,7 @@
 import Textarea from '@components/base/Textarea'
-import { FONT_SIZE } from '@constants'
 import type { TextareaProps } from '@base/Textarea/types'
-import type { ReactElement } from 'react'
 import type { IStory } from '@data/models'
+import { FONT_SIZE } from '@constants'
 
 export default {
   title: 'Components/Base/Textarea',

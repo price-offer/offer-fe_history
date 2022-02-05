@@ -1,8 +1,7 @@
 import Text from '@components/base/Text'
-import { BLACK, FONT_SIZE } from '@constants'
 import type { TextProps } from '@base/Text/types'
-import type { ReactElement } from 'react'
 import type { IStory } from '@models'
+import { BLACK, FONT_SIZE } from '@constants'
 
 export default {
   title: 'Components/Base/Text',

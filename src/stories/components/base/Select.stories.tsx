@@ -1,8 +1,7 @@
 import Select from '@base/Select'
 import type { SelectProps } from '@base/Select/type'
-import type { ReactElement } from 'react'
-import { FONT_SIZE } from '@constants'
 import type { IStory } from '@data/models'
+import { FONT_SIZE } from '@constants'
 
 export default {
   title: 'Components/base/Select',
@@ -40,10 +39,6 @@ const DEFAULT_DATA = {
   name: '선택하세요.'
 }
 
-const Template: IStory<SelectProps> = args => <Select {...args} />
-
-export const Default = Template.bind({})
-Default.args = {
-  defaultItem: DEFAULT_DATA,
-  selectItemList: DUMMY_DATA
-}
+export const Default: IStory<SelectProps> = args => (
+  <Select {...args} defaultItem={DEFAULT_DATA} selectItemList={DUMMY_DATA} />
+)

@@ -1,8 +1,7 @@
 import Radio from '@base/Radio'
-import { FONT_SIZE } from '@constants'
 import type { RadioProps } from '@base/Radio/types'
 import type { IStory } from '@data/models'
-import type { ReactElement } from 'react'
+import { FONT_SIZE } from '@constants'
 
 const DUMMY_DATA = [
   {

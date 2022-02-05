@@ -1,7 +1,6 @@
 import Input from '@base/Input'
 import type { InputProps } from '@base/Input/types'
 import type { IStory } from '@data/models'
-import type { ReactElement } from 'react'
 import { FONT_SIZE } from '@constants'
 
 export default {

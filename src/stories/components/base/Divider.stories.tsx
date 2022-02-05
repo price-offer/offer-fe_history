@@ -1,6 +1,5 @@
 import Divider from '@components/base/Divider'
 import type { DividerProps } from '@base/Divider/types'
-import type { ReactElement } from 'react'
 import type { IStory } from '@models'
 import { WHITE_GRAY } from '@constants'
 
