@@ -21,7 +21,7 @@ export default {
   }
 }
 
-const Template = (args: InputProps): ReactElement => <Input {...args} />
+const Template: IStory<InputProps> = args => <Input {...args} />
 
 export const Default = Template.bind({}) as IStory<InputProps>
 Default.args = {

@@ -26,7 +26,7 @@ export default {
   }
 }
 
-const Template = (args: TextProps): ReactElement => <Text {...args} />
+const Template: IStory<TextProps> = args => <Text {...args} />
 
 export const Primary = Template.bind({}) as IStory<TextProps>
 Primary.args = {

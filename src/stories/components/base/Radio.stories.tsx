@@ -45,7 +45,7 @@ export default {
   }
 }
 
-const Template = (args: RadioProps): ReactElement => <Radio {...args} />
+const Template: IStory<RadioProps> = args => <Radio {...args} />
 
 export const Vertical = Template.bind({}) as IStory<RadioProps>
 Vertical.args = {

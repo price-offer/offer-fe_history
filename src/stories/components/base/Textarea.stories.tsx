@@ -2,6 +2,7 @@ import Textarea from '@components/base/Textarea'
 import { FONT_SIZE } from '@constants'
 import type { TextareaProps } from '@base/Textarea/types'
 import type { ReactElement } from 'react'
+import type { IStory } from '@data/models'
 
 export default {
   title: 'Components/Base/Textarea',
@@ -20,6 +21,4 @@ export default {
   }
 }
 
-export const Default = ({ ...args }: TextareaProps): ReactElement => (
-  <Textarea {...args} />
-)
+export const Default: IStory<TextareaProps> = args => <Textarea {...args} />

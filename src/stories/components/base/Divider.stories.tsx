@@ -28,7 +28,7 @@ export default {
   }
 }
 
-const Template = (args: DividerProps): ReactElement => (
+const Template: IStory<DividerProps> = args => (
   <>
     <span>Text</span>
     <Divider {...args} />
