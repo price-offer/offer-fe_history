@@ -7,7 +7,7 @@ interface IdialogItem {
 }
 
 interface DialogProps<RefType> extends HTMLAttributes<HTMLUListElement> {
-  dialogRef?: RefObject<RefType>
+  dialogRef: RefObject<RefType> | null
   width?: string | number
   dialogItemList: IdialogItem[]
   visible: boolean

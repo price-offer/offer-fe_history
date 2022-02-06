@@ -46,6 +46,7 @@ const Template: IStory<DialogProps<HTMLUListElement>> = args => {
 
 export const HeaderDialog = Template.bind({})
 HeaderDialog.args = {
+  dialogRef: null,
   visible: false,
   dialogItemList: [
     {
@@ -73,6 +74,7 @@ HeaderDialog.args = {
 
 export const ProductDialog = Template.bind({})
 ProductDialog.args = {
+  dialogRef: null,
   visible: false,
   dialogItemList: [
     {
