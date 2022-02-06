@@ -13,11 +13,9 @@ interface DialogProps<RefType> extends HTMLAttributes<HTMLUListElement> {
   visible: boolean
 }
 
-type dialogItemListType = IdialogItem[]
-
 type styledDialogProps = Pick<
   DialogProps<HTMLUListElement>,
   'visible' | 'width' | 'dialogItemList'
 >
 
-export type { DialogProps, styledDialogProps, dialogItemListType }
+export type { DialogProps, styledDialogProps }

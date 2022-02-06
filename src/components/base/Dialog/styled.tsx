@@ -1,25 +1,11 @@
 import styled from '@emotion/styled'
-import type { styledDialogProps, dialogItemListType } from './types'
+import type { styledDialogProps } from './types'
 import { FONT_SIZE, BLACK, WHITE, WHITE_GRAY } from '@constants'
 
-const applyStyleDialogItem = (dialogItemList: dialogItemListType): string => {
-  if (dialogItemList.length > 2) {
-    return `&:not(:first-of-type, :last-child) {
-      padding: 20px 0;
-    }`
-  }
-
-  if (dialogItemList.length === 2) {
-    return `&:last-child {
-      padding-top: 20px;
-    }`
-  }
-
-  return ''
-}
-
 const StyledDialogWrapper = styled.ul<styledDialogProps>`
-  display: ${({ visible }): string => (visible ? 'block' : 'none')};
+  display: ${({ visible }): string => (visible ? 'flex' : 'none')};
+  gap: 20px;
+  flex-direction: column;
   position: absolute;
   width: ${({ width }): string =>
     typeof width === 'string' ? width : `${width}px`};
@@ -31,7 +17,6 @@ const StyledDialogWrapper = styled.ul<styledDialogProps>`
 
   li {
     text-align: center;
-    ${({ dialogItemList }): string => applyStyleDialogItem(dialogItemList)}
 
     span {
       cursor: pointer;
