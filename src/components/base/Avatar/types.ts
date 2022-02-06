@@ -1,7 +1,6 @@
 import type { ImgHTMLAttributes } from 'react'
 
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
-  src?: string
   width?: number | string
   height?: number | string
 }

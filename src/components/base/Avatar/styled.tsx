@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import type { StyledAvatarWrapperProps } from './types'
-import { BORDER } from '@constants'
+import { MEDIUM_GRAY } from '@constants'
 
 const AvatarWrapper = styled.div<StyledAvatarWrapperProps>`
   display: inline-block;
@@ -8,7 +8,7 @@ const AvatarWrapper = styled.div<StyledAvatarWrapperProps>`
     typeof width === 'string' ? width : `${width}px`};
   height: ${({ height }): string =>
     typeof height === 'string' ? height : `${height}px`};
-  border: 1px solid ${BORDER};
+  border: 1px solid ${MEDIUM_GRAY};
   border-radius: 100%;
   overflow: hidden;
 `
