@@ -1,14 +1,14 @@
 import Modal from '@components/base/Modal'
 import type { ModalProps } from '@base/Modal/types'
 import { useState } from 'react'
-import type { IStory } from '@data/models'
+import type { IStory } from '@models'
 
 export default {
   title: 'Components/Base/Modal',
   component: Modal,
   argTypes: {
-    width: { defaultValue: '350px', control: 'text' },
-    height: { defaultValue: '500px', control: 'text' },
+    width: { defaultValue: '400px', control: 'text' },
+    height: { defaultValue: '600px', control: 'text' },
     visible: { defaultValue: false, control: 'boolean' }
   }
 }

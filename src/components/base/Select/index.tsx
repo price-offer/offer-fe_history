@@ -5,9 +5,9 @@ import { StyledSelect } from './styled'
 const Select = ({
   selectItemList,
   defaultItem,
-  width = '300px',
-  height = '40px',
-  fontSize = 'NORMAL',
+  width = '100px',
+  height = '30px',
+  fontSize = 'XXXS',
   ...props
 }: SelectProps): ReactElement => (
   <StyledSelect fontSize={fontSize} height={height} width={width} {...props}>

@@ -9,10 +9,10 @@ export default {
   argTypes: {
     type: { defaultValue: 'text', control: 'inline-radio' },
     width: { defaultValue: '100%', control: 'text' },
-    height: { defaultValue: '30px', control: 'text' },
+    height: { defaultValue: '40px', control: 'text' },
     round: { defaultValue: false, controle: 'boolean' },
     fontSize: {
-      defaultValue: 'SM',
+      defaultValue: 'XXS',
       options: [...Object.keys(FONT_SIZE)],
       control: { type: 'inline-radio' }
     },
@@ -22,7 +22,7 @@ export default {
 
 const Template: IStory<InputProps> = args => <Input {...args} />
 
-export const Default = Template.bind({}) as IStory<InputProps>
+export const Default = Template.bind({})
 Default.args = {
   type: 'text',
   maxLength: 50,
@@ -31,7 +31,7 @@ Default.args = {
   placeholder: '상품명으로 원하는 물건을 검색해보세요!'
 }
 
-export const Round = Template.bind({}) as IStory<InputProps>
+export const Round = Template.bind({})
 Round.args = {
   type: 'text',
   height: 30,

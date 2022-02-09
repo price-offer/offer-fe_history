@@ -5,8 +5,8 @@ import { StyledTextarea } from './styled'
 const Textarea = ({
   children,
   width = '100%',
-  height = '100px',
-  fontSize,
+  height = '200px',
+  fontSize = 'LG',
   maxLength,
   ...props
 }: TextareaProps): ReactElement => (

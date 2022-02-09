@@ -33,11 +33,11 @@ export default {
     },
     radioName: { control: 'text' },
     size: {
-      defaultValue: '14px',
+      defaultValue: '32px',
       control: 'text'
     },
     fontSize: {
-      defaultValue: 'NORMAL',
+      defaultValue: 'MD',
       options: [...Object.keys(FONT_SIZE)],
       control: 'inline-radio'
     }
@@ -46,14 +46,14 @@ export default {
 
 const Template: IStory<RadioProps> = args => <Radio {...args} />
 
-export const Vertical = Template.bind({}) as IStory<RadioProps>
+export const Vertical = Template.bind({})
 Vertical.args = {
   radioItemList: DUMMY_DATA,
   direction: 'vertical',
   radioName: 'tradeMethod'
 }
 
-export const Horizontal = Template.bind({}) as IStory<RadioProps>
+export const Horizontal = Template.bind({})
 Horizontal.args = {
   radioItemList: DUMMY_DATA,
   direction: 'horizontal',

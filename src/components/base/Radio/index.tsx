@@ -6,8 +6,8 @@ export const Radio = ({
   radioItemList,
   direction = 'vertical',
   radioName,
-  radioSize,
-  fontSize,
+  radioSize = '32px',
+  fontSize = 'MD',
   ...props
 }: RadioProps): ReactElement => (
   <StyledForm direction={direction}>

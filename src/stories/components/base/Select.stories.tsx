@@ -9,10 +9,10 @@ export default {
   argTypes: {
     selectItemList: { control: 'text' },
     defaultItem: { control: 'text' },
-    width: { defaultValue: '350px', control: 'text' },
+    width: { defaultValue: '100px', control: 'text' },
     height: { defaultValue: '30px', control: 'text' },
     fontSize: {
-      defaultValue: 'NORMAL',
+      defaultValue: 'XXXS',
       options: [...Object.keys(FONT_SIZE)],
       control: 'inline-radio'
     }

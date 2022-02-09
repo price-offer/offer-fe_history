@@ -9,7 +9,7 @@ const StyledSelect = styled.select<StyledSelectProps>`
     typeof height === 'string' ? height : `${height}px`};
   border: 1px solid ${WHITE_GRAY};
   color: ${DARK_GRAY};
-  font-size: ${({ fontSize = 'NORMAL' }): string => FONT_SIZE[fontSize]};
+  font-size: ${({ fontSize = 'XXXS' }): string => FONT_SIZE[fontSize]};
   cursor: pointer;
 
   &:select {

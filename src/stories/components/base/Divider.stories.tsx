@@ -13,11 +13,11 @@ export default {
       control: { type: 'inline-radio' }
     },
     gap: {
-      defaultValue: '10px',
+      defaultValue: '13px',
       control: 'text'
     },
     size: {
-      defaultValue: '20px',
+      defaultValue: '14px',
       control: 'text'
     },
     color: {
@@ -35,18 +35,17 @@ const Template: IStory<DividerProps> = args => (
   </>
 )
 
-export const Vertical = Template.bind({}) as IStory<DividerProps>
+export const Vertical = Template.bind({})
 Vertical.args = {
   direction: 'vertical',
   gap: '10px',
-  size: '12px',
   color: WHITE_GRAY
 }
 
-export const Horizontal = Template.bind({}) as IStory<DividerProps>
+export const Horizontal = Template.bind({})
 Horizontal.args = {
   direction: 'horizontal',
   gap: '10px',
-  size: '350px',
+  size: '100%',
   color: WHITE_GRAY
 }

@@ -9,9 +9,9 @@ export default {
   argTypes: {
     children: { control: 'text' },
     width: { defaultValue: '100%', control: 'text' },
-    height: { defaultValue: '350px', control: 'text' },
+    height: { defaultValue: '200px', control: 'text' },
     fontSize: {
-      defaultValue: 'SM',
+      defaultValue: 'LG',
       options: [...Object.keys(FONT_SIZE)],
       control: { type: 'inline-radio' }
     },

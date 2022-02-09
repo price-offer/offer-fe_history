@@ -10,7 +10,7 @@ const StyledTextarea = styled.textarea<StyledTextareaProps>`
   padding: 5px 10px;
   box-sizing: border-box;
   border: ${WHITE_GRAY} 1px solid;
-  font-size: ${({ fontSize = 'SM' }): string => FONT_SIZE[fontSize]};
+  font-size: ${({ fontSize = 'LG' }): string => FONT_SIZE[fontSize]};
   font-family: inherit;
   resize: none;
 

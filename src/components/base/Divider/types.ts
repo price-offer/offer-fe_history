@@ -9,4 +9,4 @@ interface DividerProps extends HTMLAttributes<HTMLHRElement> {
   color?: string
 }
 
-export type { DividerProps, directionType }
+export type { DividerProps }

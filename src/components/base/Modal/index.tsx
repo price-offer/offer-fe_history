@@ -7,8 +7,8 @@ import ReactDOM from 'react-dom'
 
 const Modal = ({
   children,
-  width,
-  height,
+  width = '400px',
+  height = '600px',
   visible = false,
   onClose,
   ...props
@@ -29,10 +29,6 @@ const Modal = ({
       document.body.removeChild(topElement)
     }
   }, [])
-
-  useEffect(() => {
-    console.log(visible)
-  }, [visible])
 
   return ReactDOM.createPortal(
     <StyledBackgroundDIM visible={visible}>

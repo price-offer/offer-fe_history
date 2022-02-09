@@ -1,12 +1,12 @@
 import type { ReactElement } from 'react'
-import { StyledDivider } from './styled'
+import StyledDivider from './styled'
 import type { DividerProps } from './types'
 
 const Divider = ({
   color,
   direction = 'vertical',
   gap = '10px',
-  size = '15px',
+  size = '14px',
   ...props
 }: DividerProps): ReactElement => (
   <StyledDivider

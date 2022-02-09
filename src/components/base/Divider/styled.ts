@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import type { CSSObject } from '@emotion/styled'
-import type { DividerProps, directionType } from './types'
+import type { DividerProps } from './types'
 import { WHITE_GRAY } from '@constants'
 
 const StyledDivider = styled.hr<DividerProps>`
@@ -26,4 +26,4 @@ const StyledDivider = styled.hr<DividerProps>`
         }};
 `
 
-export { StyledDivider }
+export default StyledDivider

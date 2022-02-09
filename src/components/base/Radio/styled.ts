@@ -25,7 +25,7 @@ const StyledLabel = styled.label<StyledRadioProps>`
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  font-size: ${({ fontSize = 'NORMAL' }): string => FONT_SIZE[fontSize]};
+  font-size: ${({ fontSize = 'MD' }): string => FONT_SIZE[fontSize]};
 `
 
 export { StyledForm, StyledInput, StyledLabel }

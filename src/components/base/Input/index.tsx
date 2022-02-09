@@ -6,8 +6,8 @@ import { StyledInput } from './styled'
 const Input = ({
   type = 'text',
   width = '100%',
-  height = '30px',
-  fontSize,
+  height = '40px',
+  fontSize = 'XXS',
   maxLength,
   round,
   ...props
