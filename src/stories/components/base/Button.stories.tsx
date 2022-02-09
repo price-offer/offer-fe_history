@@ -176,3 +176,15 @@ MessageButtonDisabled.args = {
   fontSize: 'XXXS',
   onClick: action('메시지 전송 버튼 클릭!')
 }
+
+export const SellingButton = Template.bind({})
+SellingButton.args = {
+  children: '판매하기',
+  type: 'button',
+  width: 'auto',
+  height: '25px',
+  theme: 'line-none',
+  fontSize: 'XXS',
+  strong: false,
+  onClick: action('판매하기 버튼 클릭!')
+}
