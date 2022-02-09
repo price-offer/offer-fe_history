@@ -4,16 +4,16 @@ import type { TextProps } from './types'
 
 const Text = ({
   children,
-  fontSize,
+  fontSize = 'NORMAL',
+  tag = 'span',
   color,
   strong,
-  block,
   underline,
   theme = 'primary',
   ...props
 }: TextProps): ReactElement => (
   <StyledText
-    block={block}
+    as={tag}
     color={color}
     fontSize={fontSize}
     strong={strong}

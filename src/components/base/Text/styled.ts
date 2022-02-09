@@ -20,9 +20,8 @@ const applyThemeStyle = (theme: TextTheme): string | undefined => {
 }
 
 const StyledText = styled.span<StyledTextProps>`
-  display: ${({ block }): string => (block ? 'block' : 'inline')};
   color: ${({ color }): string => (color ? color : BLACK)};
-  font-size: ${({ fontSize = 'SM' }): string => FONT_SIZE[fontSize]};
+  font-size: ${({ fontSize = 'NORMAL' }): string => FONT_SIZE[fontSize]};
   font-weight: ${({ strong }): string => (strong ? 'bold' : 'none')};
   text-decoration: ${({ underline }): string =>
     underline ? 'underline' : 'none'};
