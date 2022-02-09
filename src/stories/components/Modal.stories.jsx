@@ -6,16 +6,26 @@ export default {
   component: Modal,
   argTypes: {
     width: { control: 'number' },
-    height: { control: 'number' },
-  },
+    height: { control: 'number' }
+  }
 }
 export const Default = args => {
   const [visible, setVisible] = useState(false)
 
   return (
     <div>
-      <button onClick={() => setVisible(true)}>모달온</button>
-      <Modal visible={visible} {...args} onClose={() => setVisible(false)}>
+      <button
+        onClick={() => {
+          setVisible(true)
+        }}>
+        모달온
+      </button>
+      <Modal
+        visible={visible}
+        {...args}
+        onClose={() => {
+          setVisible(false)
+        }}>
         안냐숑
       </Modal>
     </div>

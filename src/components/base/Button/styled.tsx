@@ -45,6 +45,12 @@ const applyThemeStyle = (theme: ButtonTheme): string => {
         border: 1px solid ${WHITE_GRAY};
         background-color: ${WHITE};
       `
+    case 'line-none':
+      return `
+        color: ${BLACK};
+        border:none;
+        background-color:transparent;
+        `
     default:
       return `
         color: ${WHITE};

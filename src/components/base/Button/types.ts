@@ -9,6 +9,7 @@ type ButtonTheme =
   | 'line-primary'
   | 'line-black'
   | 'line-gray'
+  | 'line-none'
 type ButtonFontSizeKeys = keyof typeof FONT_SIZE
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
